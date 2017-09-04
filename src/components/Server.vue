@@ -11,7 +11,7 @@
     import Warning from '../assets/icons/warning.svg';
 
     export default {
-        name: 'server',
+        name: 'Server',
         props: {
             name: {
                 type: String,

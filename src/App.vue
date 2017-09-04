@@ -1,16 +1,20 @@
 <template>
     <div id="app">
-        <ServerList :servers="serverList"></ServerList>
-        <Footer></Footer>
+        <div class="content">
+            <ServerList :servers="serverList"></ServerList>
+            <AddServer></AddServer>
+        </div>
+        <AppFooter></AppFooter>
     </div>
 </template>
 
 <script>
     import ServerList from './components/ServerList.vue';
-    import Footer from './components/Footer.vue';
+    import AddServer from './components/AddServer.vue';
+    import AppFooter from './components/Footer.vue';
 
     export default {
-        name: 'app',
+        name: 'App',
         data: () => {
             return {
                 serverList: [
@@ -30,8 +34,9 @@
             };
         },
         components: {
-            Footer,
+            AppFooter,
             ServerList,
+            AddServer,
         },
     };
 </script>
@@ -49,7 +54,15 @@
     #app {
         background-color: white;
         border-radius: 3px;
-        text-align: center;
         color: #2c3e50;
+        font-family: Helvetica, sans-serif;
+        font-size: 14px;
+    }
+
+    .content {
+        overflow: hidden;
+        position: relative;
+        min-height: 212px;
+        max-height: 410px;
     }
 </style>

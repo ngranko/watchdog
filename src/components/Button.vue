@@ -18,7 +18,9 @@
 
 <style lang="scss">
     .button {
+        display: inline-block;
         padding: 5px 10px;
+        margin: 5px;
         border-radius: 3px;
         cursor: pointer;
         transition: .2s;

@@ -57,7 +57,7 @@ function getWindowPosition() {
     // Position window 4 pixels vertically below the tray icon
     const y = Math.round(trayBounds.y + trayBounds.height + WINDOW_VERTICAL_OFFSET);
 
-    return {x: x, y: y};
+    return {x, y};
 }
 
 function createWindow() {
@@ -69,10 +69,6 @@ function createWindow() {
         fullscreenable: false,
         resizable: false,
         transparent: true,
-        webPreferences: {
-            // Prevents renderer process code from not running when window is hidden
-            backgroundThrottling: false,
-        },
     });
     window.loadURL(`file://${path.join(__dirname, 'lib', 'index.html')}`);
 

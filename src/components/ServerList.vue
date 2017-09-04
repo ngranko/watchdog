@@ -1,5 +1,5 @@
 <template>
-    <div id="server-list">
+    <div id="server-list" class="visible">
         <div v-for="server in servers">
             <Server :name="server.name" :status="server.status"></Server>
         </div>
@@ -22,8 +22,16 @@
 
 <style lang="scss">
     #server-list {
-        max-height: 400px;
+        position: relative;
+        width: 100%;
+        max-height: 410px;
         overflow-y: scroll;
         overflow-x: hidden;
+        transform: translateX(-100%);
+        transition: .3s;
+
+        &.visible {
+            transform: none;
+        }
     }
 </style>
